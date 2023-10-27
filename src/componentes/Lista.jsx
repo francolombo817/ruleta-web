@@ -38,7 +38,7 @@ const ListaDeItems = () => {
       setItems([...items, newItem]);
 
       const color = getRandomPastelColor(colorIndex);
-      setItemColors({ ...itemColors, [newItem.id]: color }); 
+      setItemColors({ ...itemColors, [newItem.id]: color });
       setColorIndex((colorIndex + 1) % 10);
 
       setInputValue("");
@@ -74,7 +74,6 @@ const ListaDeItems = () => {
     return colors[index];
   };
 
-
   return (
     <div>
       <div>
@@ -100,9 +99,9 @@ const ListaDeItems = () => {
         ))}
       </ul>
       <Link to="/ruleta">
-      <button>
-        Empesar
-      </button>
+        <button>
+          Empesar
+        </button>
       </Link>
     </div>
   );

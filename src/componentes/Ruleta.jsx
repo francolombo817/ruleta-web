@@ -21,6 +21,11 @@ const Ruleta = () => {
 
   return (
     <>
+      <Link to="/">
+      <button>
+        Inicio
+      </button>
+      </Link>
       <Wheel
         mustStartSpinning={mustSpin}
         prizeNumber={prizeNumber}
@@ -30,11 +35,6 @@ const Ruleta = () => {
         }}
       />
       <button onClick={handleSpinClick}>SPIN</button>
-      <Link to="/">
-      <button>
-        Inicio
-      </button>
-      </Link>
     </>
   )
 }
