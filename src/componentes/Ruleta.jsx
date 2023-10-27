@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Wheel } from 'react-custom-roulette'
+import { Link } from 'react-router-dom';
 
 const data = [
   { text: 'Option 0', option: 0, style: { backgroundColor: 'white' } },
@@ -29,6 +30,11 @@ const Ruleta = () => {
         }}
       />
       <button onClick={handleSpinClick}>SPIN</button>
+      <Link to="/">
+      <button>
+        Inicio
+      </button>
+      </Link>
     </>
   )
 }

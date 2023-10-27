@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from './Lista.module.css'
+import { Link } from "react-router-dom";
 
 const ListaDeItems = () => {
   const [items, setItems] = useState([]);
@@ -98,9 +99,11 @@ const ListaDeItems = () => {
           </li>
         ))}
       </ul>
+      <Link to="/ruleta">
       <button>
-        Elegir
+        Empesar
       </button>
+      </Link>
     </div>
   );
 };
