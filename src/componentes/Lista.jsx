@@ -17,6 +17,7 @@ const ListaDeItems = () => {
   }, []);
 
   useEffect(() => {
+    console.log(items)
     localStorage.setItem("items", JSON.stringify(items));
   }, [items]);
 
@@ -35,11 +36,29 @@ const ListaDeItems = () => {
         content: inputValue
       };
 
-      setItems([...items, newItem]);
 
+      // mariano -> aca estas guardado por un lado items y por otro lado itemColors
+      // mariano -> no seria mejor guardar todo junto?
+      // mariano -> por ejemplo:
+      // mariano -> const newItem = { id: Date.now(), content: inputValue, color: getRandomPastelColor(colorIndex) };
+      // mariano -> y despues guardar todo junto en un solo objeto
+      // mariano -> const newItems = [...items, newItem];
+      // mariano -> setItems(newItems);
+      // mariano -> y solo dejas este en el useEffect localStorage.setItem("items", JSON.stringify(newItems));
+      // mariano -> si haces esto creo que tenes que modificar cosas mas abajo
+      setItems([...items, newItem]);
       const color = getRandomPastelColor(colorIndex);
       setItemColors({ ...itemColors, [newItem.id]: color });
       setColorIndex((colorIndex + 1) % 10);
+
+      // mariano -> ya podes aprobechar a guardar la data como la necesita wheel
+      // el option nose que es, pero el text y el style ya los tenes
+      // si option tiene que ser un numero incremental osea desde 0 en adelante
+      // podes ayudarte con el lengh de la lista de items
+      // option: items.length + 1
+      //      const data = [
+      //   { text: inputValue, option: 0, style: { backgroundColor: color } },
+      // ]
 
       setInputValue("");
     }
@@ -58,6 +77,8 @@ const ListaDeItems = () => {
     setColorIndex(0);
   };
 
+  // mariano: acá hay 10 colores, que pasa si agrego 11 items a la lista?
+  // mariano: arrancan a mostrarse los mismos colores, esto esta bien?
   const getRandomPastelColor = (index) => {
     const colors = [
       '#B39DDB',
