@@ -13,7 +13,6 @@ const ListaDeItems = () => {
   }, []);
 
   useEffect(() => {
-    console.log(items)
     localStorage.setItem("items", JSON.stringify(items));
   }, [items]);
 
@@ -33,30 +32,6 @@ const ListaDeItems = () => {
     const newItems =[...items, newItem];
     setItems(newItems);
     setColorIndex((colorIndex +1) %10);
-    
-      // mariano -> aca estas guardado por un lado items y por otro lado itemColors
-      // no seria mejor guardar todo junto?
-      // por ejemplo:
-      // const newItem = { id: Date.now(), content: inputValue, color: getRandomPastelColor(colorIndex) };
-      // y despues guardar todo junto en un solo objeto
-      // const newItems = [...items, newItem];
-      // setItems(newItems);
-      // y solo dejas este en el useEffect localStorage.setItem("items", JSON.stringify(newItems));
-      // si haces esto creo que tenes que modificar cosas mas abajo
-      // setItems([...items, newItem]);
-      // const color = getRandomPastelColor(colorIndex);
-      // setItemColors({ ...items, [newItem.id]: color });
-      // setColorIndex((newItem + 1) % 10);
-
-      // mariano -> ya podes aprobechar a guardar la data como la necesita wheel
-      // el option nose que es, pero el text y el style ya los tenes
-      // si option tiene que ser un numero incremental osea desde 0 en adelante
-      // podes ayudarte con el lengh de la lista de items
-      // option: items.length + 1
-      //      const data = [
-      //   { text: inputValue, option: 0, style: { backgroundColor: color } },
-      // ]
-
       setItems(newItems);
       setInputValue("");
     }

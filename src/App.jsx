@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <div>
-        <ListaDeItems/>
         <Ruleta/>
+        <ListaDeItems/>
       </div>
     </>
   )
