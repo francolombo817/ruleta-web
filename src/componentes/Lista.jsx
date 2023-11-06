@@ -7,6 +7,8 @@ const ListaDeItems = () => {
   const [inputValue, setInputValue] = useState("");
   const [colorIndex, setColorIndex] = useState(0);
 
+  console.log(items);
+
   useEffect(() => {
     const storedItems = JSON.parse(localStorage.getItem("items")) || [];
     setItems(storedItems);
