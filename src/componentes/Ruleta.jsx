@@ -33,11 +33,11 @@ const Ruleta = () => {
   //   { text: 'Option 2', option: 2, style: { backgroundColor: 'red' } },
   // ]
 
-  const data = items.map((item, index) => [({
+  const data = [items.map((item, index) => [{
     text: item.content,
     option: index,
     style: { backgroundColor: item.color },
-  })]);
+  }])];
   console.log(data);
 
 
