@@ -53,7 +53,7 @@ const Ruleta = () => {
         mustStartSpinning={mustSpin}
         spinDuration={[0.2]}
         prizeNumber={prizeNumber}
-        data={items}
+        data={data}
         outerBorderColor={["#ccc"]}
         outerBorderWidth={[9]}
         innerBorderColor={["#f2f2f2"]}
