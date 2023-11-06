@@ -29,11 +29,11 @@ const Ruleta = () => {
   //   { text: 'Option 2', option: 2, style: { backgroundColor: 'red' } },
   // ]
 
-  // const data = [items.map((item, index) => ({
-  //   text: item.content,
-  //   option: index,
-  //   style: { backgroundColor: item.color },
-  // }))];
+  const data = [items.map((item, index) => ({
+    text: item.content,
+    option: index,
+    style: { backgroundColor: item.color },
+  }))];
 
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const Ruleta = () => {
         mustStartSpinning={mustSpin}
         spinDuration={[0.2]}
         prizeNumber={prizeNumber}        
-        data={items}
+        data={data}
         outerBorderColor={["#ccc"]}
         outerBorderWidth={[9]}
         innerBorderColor={["#f2f2f2"]}
