@@ -7,16 +7,11 @@ const Ruleta = () => {
   const [prizeNumber, setPrizeNumber] = useState(null);
   const [items, setItems] = useState([]);
 
-  console.log(items);
 
   useEffect(() => {
     const storedItems = JSON.parse(localStorage.getItem("items")) || [];
     setItems(storedItems);
   }, []);
-
-  useEffect(() => {
-    localStorage.setItem('items', JSON.stringify(items));
-  }, [items]);
 
   const handleSpinClick = () => {
     if (!mustSpin) {
@@ -27,19 +22,32 @@ const Ruleta = () => {
   };
 
 
+
   // const data = [
   //   { text: 'Option 0', option: 0, style: { backgroundColor: 'white' } },
   //   { text: 'Option 1', option: 1, style: { backgroundColor: 'green' } },
   //   { text: 'Option 2', option: 2, style: { backgroundColor: 'red' } },
   // ]
 
+<<<<<<< HEAD
   const data = [items.map((item, index) => [{
     text: item.content,
     option: index,
     style: { backgroundColor: item.color },
   }])];
   console.log(data);
+=======
+  const data = [items.map((item, index) => ({
+    text: item.content,
+    option: index,
+    style: { backgroundColor: item.color },
+  }))];
+>>>>>>> parent of 721686a (6)
 
+
+  useEffect(() => {
+    localStorage.setItem('items', JSON.stringify(items));
+  }, [items]);
 
 
   return (
@@ -52,7 +60,11 @@ const Ruleta = () => {
       <Wheel
         mustStartSpinning={mustSpin}
         spinDuration={[0.2]}
+<<<<<<< HEAD
         prizeNumber={prizeNumber}
+=======
+        prizeNumber={prizeNumber}        
+>>>>>>> parent of 721686a (6)
         data={data}
         outerBorderColor={["#ccc"]}
         outerBorderWidth={[9]}
@@ -73,7 +85,7 @@ const Ruleta = () => {
           '#FFB74D',
           '#C5E1A5',
           '#FF8A65'
-
+    
         ]}
         onStopSpinning={() => {
           setMustSpin(false);

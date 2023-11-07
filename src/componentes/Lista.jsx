@@ -22,17 +22,17 @@ const ListaDeItems = () => {
   };
 
   const handleAgregarItem = () => {
-    if (inputValue.trim() !== "") {
-      const newItem = {
-        id: Date.now(),
-        option: items.length,
-        color: getRandomPastelColor(colorIndex),
-        content: inputValue
-      };
+  if (inputValue.trim() !== "") {
+    const newItem = {
+      id: Date.now(),
+      option: items.length,
+      color: getRandomPastelColor(colorIndex),
+      content: inputValue
+    };
 
-      const newItems = [...items, newItem];
-      setItems(newItems);
-      setColorIndex((colorIndex + 1) % 10);
+    const newItems =[...items, newItem];
+    setItems(newItems);
+    setColorIndex((colorIndex +1) %10);
       setItems(newItems);
       setInputValue("");
     }
@@ -81,7 +81,7 @@ const ListaDeItems = () => {
       </div>
       <ul className={styles.lu} >
         {items.map((item) => (
-          <li key={item.id} className={styles.li} style={{ backgroundColor: item.color }}>
+          <li key={item.id} className={styles.li} style={{ backgroundColor: item.color}}>
             <div className={styles.tex}>
               {item.content}
             </div>
