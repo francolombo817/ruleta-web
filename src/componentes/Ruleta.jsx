@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Ruleta = () => {
   const [mustSpin, setMustSpin] = useState(false);
-  const [prizeNumber, setPrizeNumber] = useState(null);
+  const [prizeNumber, setPrizeNumber] = useState(0);
   const [items, setItems] = useState([]);
 
 
@@ -12,6 +12,11 @@ const Ruleta = () => {
     const storedItems = JSON.parse(localStorage.getItem("items")) || [];
     setItems(storedItems);
   }, []);
+  
+    useEffect(() => {
+    localStorage.setItem('items', JSON.stringify(items));
+  }, [items]);
+  
 
   const handleSpinClick = () => {
     if (!mustSpin) {
@@ -29,25 +34,12 @@ const Ruleta = () => {
   //   { text: 'Option 2', option: 2, style: { backgroundColor: 'red' } },
   // ]
 
-<<<<<<< HEAD
-  const data = [items.map((item, index) => [{
-    text: item.content,
-    option: index,
-    style: { backgroundColor: item.color },
-  }])];
-  console.log(data);
-=======
   const data = [items.map((item, index) => ({
     text: item.content,
     option: index,
-    style: { backgroundColor: item.color },
+    // style: { backgroundColor: item.color },
   }))];
->>>>>>> parent of 721686a (6)
 
-
-  useEffect(() => {
-    localStorage.setItem('items', JSON.stringify(items));
-  }, [items]);
 
 
   return (
@@ -60,11 +52,7 @@ const Ruleta = () => {
       <Wheel
         mustStartSpinning={mustSpin}
         spinDuration={[0.2]}
-<<<<<<< HEAD
-        prizeNumber={prizeNumber}
-=======
         prizeNumber={prizeNumber}        
->>>>>>> parent of 721686a (6)
         data={data}
         outerBorderColor={["#ccc"]}
         outerBorderWidth={[9]}

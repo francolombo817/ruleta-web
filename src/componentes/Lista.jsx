@@ -8,12 +8,12 @@ const ListaDeItems = () => {
   const [colorIndex, setColorIndex] = useState(0);
 
   useEffect(() => {
-  console.log(items);
-    const storedItems = JSON.parse(localStorage.getItem("items")) || [];
+      const storedItems = JSON.parse(localStorage.getItem("items")) || [];
     setItems(storedItems);
-  }, []);
-
+    }, []);
+  
   useEffect(() => {
+    console.log(items);
     localStorage.setItem("items", JSON.stringify(items));
   }, [items]);
 
