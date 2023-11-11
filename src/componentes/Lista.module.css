@@ -1,6 +1,12 @@
+
 .limpiar {
     text-align: left;
     padding: 20px;
+}
+
+.butonLimpiar {
+    color: rgb(0, 0, 0);
+    background: #9ae65d;
 }
 
 .lu {
@@ -36,4 +42,20 @@
     color: black;
     width: auto;
     height: 100%;
+}
+
+.input {
+    width: 80%;
+    height: 30px;
+    background: #daa3ff;
+}
+
+.agregar {
+    position: relative;
+    top: -7px;
+    height: 30px;
+    width: 30px;
+    float: right;
+    cursor: pointer;
+    background: #5de6c8;
 }

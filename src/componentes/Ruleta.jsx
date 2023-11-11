@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Wheel } from 'react-custom-roulette'
+import styles from './Ruleta.module.css'
 
 const DEFAULT_ITEMS = [
   {
@@ -24,7 +25,9 @@ const Ruleta = ({ items = DEFAULT_ITEMS }) => {
   };
 
   return (
-    <>
+    <div
+    // className={styles.container}
+    >
       <Wheel
         mustStartSpinning={mustSpin}
         spinDuration={[0.2]}
@@ -42,8 +45,11 @@ const Ruleta = ({ items = DEFAULT_ITEMS }) => {
           setMustSpin(false);
         }}
       />
-      <button onClick={handleSpinClick}>SPIN</button>
-    </>
+      <button
+      className={styles.button}
+       onClick={handleSpinClick}      
+      >SPIN</button>
+    </div>
   )
 }
 

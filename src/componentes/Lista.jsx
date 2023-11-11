@@ -46,15 +46,19 @@ const ListaDeItems = ({ items = [], setItems }) => {
     <div>
       <div>
         <div className={styles.limpiar}>
-          <button onClick={handleLimpiar}>Limpiar</button>
+          <button className={styles.butonLimpiar}
+          onClick={handleLimpiar}>Limpiar</button>
         </div>
         <input
+        className={styles.input}
           type="text"
           value={inputValue}
           onChange={handleInputChange}
           placeholder="Escribe aquí"
         />
-        <button onClick={handleAgregarItem}>+</button>
+        <button 
+        className={styles.agregar}
+        onClick={handleAgregarItem}>+</button>
       </div>
       <ul className={styles.lu} >
         {items.map((item) => (
