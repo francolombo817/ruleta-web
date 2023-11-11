@@ -35,7 +35,7 @@ const ListaDeItems = ({ items = [], setItems }) => {
 
   const handleEliminarItem = (id) => {
     const updatedItems = items.filter((item) => item.id !== id);
-    setItems(updatedItems);
+    updatedItems.length === 0 ? setItems(undefined) : setItems(updatedItems);
   };
 
   const handleLimpiar = () => {
