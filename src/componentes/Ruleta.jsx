@@ -76,7 +76,7 @@ const Ruleta = ({ items = DEFAULT_ITEMS }) => {
             <h1 className={styles.textFlotante}>{items[winner].text}!!!</h1>
           </div>
           <div>
-            <button className={styles.segirFlotante} onClick={handleSeguir}>segir</button>
+            <button className={styles.segirFlotante} onClick={handleSeguir}>SEGUIR</button>
           </div>
         </div>
       )}
