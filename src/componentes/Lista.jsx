@@ -26,9 +26,9 @@ const ListaDeItems = ({ items = [], setItems }) => {
         option: items.length + 1,
       };
 
-      const newItems =[...items, newItem];
+      const newItems = [...items, newItem];
       setItems(newItems);
-      setColorIndex((colorIndex +1) %10);
+      setColorIndex((colorIndex + 1) % 10);
       setInputValue("");
     }
   };
@@ -47,22 +47,22 @@ const ListaDeItems = ({ items = [], setItems }) => {
       <div>
         <div className={styles.limpiar}>
           <button className={styles.butonLimpiar}
-          onClick={handleLimpiar}>Limpiar</button>
+            onClick={handleLimpiar}>Limpiar</button>
         </div>
         <input
-        className={styles.input}
+          className={styles.input}
           type="text"
           value={inputValue}
           onChange={handleInputChange}
           placeholder="Escribe aquí"
         />
-        <button 
-        className={styles.agregar}
-        onClick={handleAgregarItem}>+</button>
+        <button
+          className={styles.agregar}
+          onClick={handleAgregarItem}>+</button>
       </div>
       <ul className={styles.lu} >
         {items.map((item) => (
-          <li key={item.id} className={styles.li} style={{ backgroundColor: item.style.backgroundColor}}>
+          <li key={item.id} className={styles.li} style={{ backgroundColor: item.style.backgroundColor }}>
             <div className={styles.tex}>
               {`${item.option} - ${item.text}`}
             </div>
