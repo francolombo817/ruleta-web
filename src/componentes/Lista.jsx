@@ -33,6 +33,12 @@ const ListaDeItems = ({ items = [], setItems }) => {
     }
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+       handleAgregarItem();
+    }
+   };
+
   const handleEliminarItem = (id) => {
     const updatedItems = items.filter((item) => item.id !== id);
     updatedItems.length === 0 ? setItems(undefined) : setItems(updatedItems);
@@ -55,6 +61,7 @@ const ListaDeItems = ({ items = [], setItems }) => {
           value={inputValue}
           onChange={handleInputChange}
           placeholder="Escribe aquí"
+          onKeyPress={handleKeyPress}
         />
         <button
           className={styles.agregar}
